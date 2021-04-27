@@ -1,6 +1,6 @@
 package com.in28minutes.junit;
 
-import static org.junit.Assert.*; // use if more than 3 imports from Assert package
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 
