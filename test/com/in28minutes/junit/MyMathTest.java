@@ -1,7 +1,8 @@
 package com.in28minutes.junit;
 
 import static org.junit.Assert.assertEquals;
-import org.junit.Test;
+
+import org.junit.*;
 
 
 public class MyMathTest {
@@ -12,6 +13,27 @@ public class MyMathTest {
        Remember to initialize every variable of the object back to default value before each test.
      */
     MyMath myMath = new MyMath();
+
+    @Before // runs before EVERY test (note: good to use for object default settings)
+    public void before() {
+        System.out.println("Before");
+    }
+
+    @After // runs after EVERY test (note: good to use for object cleanup)
+    public void after() {
+        System.out.println("After");
+    }
+
+    // @BeforeClass and @AfterClass should be "static" methods
+    @BeforeClass // Runs before all @Before/@After executions
+    public static void beforeClass() {
+        System.out.println("BeforeClass");
+    }
+
+    @AfterClass // Runs after all @Before/@After executions
+    public static void afterClass() {
+        System.out.println("AfterClass");
+    }
 
     @Test
     public void sumWithThreeNumbers() {
